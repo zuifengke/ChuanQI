@@ -235,6 +235,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\js\jquery-1.8.2.js" />
     <Content Include="Content\js\jquery-1.8.2.min.js" />
+    <Content Include="hello.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -345,6 +346,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\chuanqi_211.pubxml" />
+    <None Include="Properties\PublishProfiles\chuanqi_43.227.192.236.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
