@@ -60,7 +60,7 @@ namespace ChuanQi.Web.DBAccess
             return totalCount;
         }
         /// <summary>
-        /// 
+        /// 插入
         /// </summary>
         /// <param name="checkPatientModel"></param>
         /// <returns></returns>
@@ -76,6 +76,35 @@ namespace ChuanQi.Web.DBAccess
                 logger.Error(ex.ToString());
                 return false;
             }
+        }
+
+        /// <summary>
+        /// 批量删除
+        /// </summary>
+        /// <param name="checkPatientModel"></param>
+        /// <returns></returns>
+        public bool DeleteSaleInfos(string ids)
+        {
+            try
+            {
+                string sql = IBatisHelper.GetRuntimeSql(this.SqlMapper, "DeleteSaleInfos", ids);
+                SqlMapper.Delete("DeleteSaleInfos", ids);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.ToString());
+                return false;
+            }
+        }
+        /// <summary>
+        /// 获取sqlMap对应statement的完整id
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        protected  string GetStatementName(string name)
+        {
+            return string.Format("{0}.{1}", typeof(SaleInfoDao).Namespace, name);
         }
     }
 }

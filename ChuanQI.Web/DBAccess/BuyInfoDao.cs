@@ -77,5 +77,24 @@ namespace ChuanQi.Web.DBAccess
                 return false;
             }
         }
+        /// <summary>
+        /// 批量删除
+        /// </summary>
+        /// <param name="checkPatientModel"></param>
+        /// <returns></returns>
+        public bool DeleteBuyInfos(string ids)
+        {
+            try
+            {
+                string sql = IBatisHelper.GetRuntimeSql(this.SqlMapper, "DeleteBuyInfos", ids);
+                SqlMapper.Delete("DeleteBuyInfos", ids);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.ToString());
+                return false;
+            }
+        }
     }
 }
