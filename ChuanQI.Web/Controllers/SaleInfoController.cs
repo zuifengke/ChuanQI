@@ -20,7 +20,6 @@ namespace ChuanQI.Web.Controllers
             if (this.m_pagination == null)
             {
                 this.m_pagination = new Pagination();
-                this.m_pagination.PageSize = 20;
             }
             SaleInfo SaleInfo = new SaleInfo();
             if (id != null)
