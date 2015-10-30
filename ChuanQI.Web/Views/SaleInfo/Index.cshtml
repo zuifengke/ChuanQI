@@ -1,9 +1,9 @@
 ﻿@using ChuanQi.Web.Models;
 @{
-    ViewBag.Title = "求购";
-    IList<BuyInfo> lstBuyInfos = ViewData["lstBuyInfos"] as IList<BuyInfo>;
+    ViewBag.Title = "出售";
+    IList<SaleInfo> lstSaleInfos = ViewData["lstSaleInfos"] as IList<SaleInfo>;
     ChuanQI.Web.Models.Pagination pagination = ViewData["pagination"] as ChuanQI.Web.Models.Pagination;
-    string url = "/BuyInfo/Index/";
+    string url = "/SaleInfo/Index/";
 }
 
 <div class="content" style="height:600px;">
@@ -24,8 +24,8 @@
                             <th class="span3 sortable ">
                                 <span class="line"></span>角色名
                             </th>
-                            <th class="span3 sortable"><span class="line"></span>求购物品</th>
-                            <th class="span3 sortable "><span class="line"></span> 求购价格</th>
+                            <th class="span3 sortable"><span class="line"></span>出售物品</th>
+                            <th class="span3 sortable "><span class="line"></span> 出售价格</th>
                             <th class="span3 sortable "><span class="line"></span>联系方式</th>
                         </tr>
                     </thead>
@@ -33,11 +33,11 @@
                     <tbody>
                         <!-- row -->
                         @{
-                            if (lstBuyInfos != null && lstBuyInfos.Count > 0)
+                            if (lstSaleInfos != null && lstSaleInfos.Count > 0)
                             {
 
 
-                                foreach (var item in lstBuyInfos)
+                                foreach (var item in lstSaleInfos)
                                 {
                                     <tr>
                                         <td>@item.SubTime.ToString("yyyy-MM-dd HH:mm:ss")</td>

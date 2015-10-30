@@ -9,12 +9,12 @@ using System.Web.Mvc;
 
 namespace ChuanQI.Web.Controllers
 {
-    public class BuyInfoController : Controller
+    public class SaleInfoController : Controller
     {
         private Pagination m_pagination = null;
         //
-        // GET: /BuyInfo/
-
+        // GET: /SaleInfo/
+        
         public ActionResult Index(String id)
         {
             if (this.m_pagination == null)
@@ -22,12 +22,12 @@ namespace ChuanQI.Web.Controllers
                 this.m_pagination = new Pagination();
                 this.m_pagination.PageSize = 20;
             }
-            BuyInfo buyInfo = new BuyInfo();
+            SaleInfo SaleInfo = new SaleInfo();
             if (id != null)
                 this.m_pagination.PageIndex = int.Parse(id);
-            this.m_pagination.TotalCount = BuyInfoDao.Instance.GetTotalCount(buyInfo);
-            IList<BuyInfo> lstBuyInfos = BuyInfoDao.Instance.GetPageBuyInfos(this.m_pagination.PageIndex, this.m_pagination.PageSize, buyInfo);
-            ViewData["lstBuyInfos"] = lstBuyInfos;
+            this.m_pagination.TotalCount = SaleInfoDao.Instance.GetTotalCount(SaleInfo);
+            IList<SaleInfo> lstSaleInfos = SaleInfoDao.Instance.GetPageSaleInfos(this.m_pagination.PageIndex, this.m_pagination.PageSize, SaleInfo);
+            ViewData["lstSaleInfos"] = lstSaleInfos;
             ViewData["pagination"] = this.m_pagination;
             return View();
         }
@@ -38,20 +38,20 @@ namespace ChuanQI.Web.Controllers
         [HttpPost]
         public ActionResult Submit(FormCollection form)
         {
-            BuyInfo buyInfo = new BuyInfo();
-            buyInfo.Place = form["Place"];
-            buyInfo.Name = form["Name"];
-            buyInfo.Tel = form["Tel"];
+            SaleInfo SaleInfo = new SaleInfo();
+            SaleInfo.Place = form["Place"];
+            SaleInfo.Name = form["Name"];
+            SaleInfo.Tel = form["Tel"];
             float fPrice = 0;
             float.TryParse(form["Price"], out fPrice);
-            buyInfo.Price = fPrice;
-            buyInfo.Product = form["Product"];
-            buyInfo.SubTime = DateTime.Now;
-            bool result = BuyInfoDao.Instance.InsertBuyInfo(buyInfo);
+            SaleInfo.Price = fPrice;
+            SaleInfo.Product = form["Product"];
+            SaleInfo.SubTime = DateTime.Now;
+            bool result = SaleInfoDao.Instance.InsertSaleInfo(SaleInfo);
             if (result)
-                return Redirect("/BuyInfo/Index/1");
+                return Redirect("/SaleInfo/Index/1");
             else
-                return Redirect("/BuyInfo/Index/1");
+                return Redirect("/SaleInfo/Index/1");
         }
         [HttpPost]
         public ActionResult Success()

@@ -6,7 +6,7 @@ using System.Text;
 namespace ChuanQi.Web.Models
 {
 
-    public class BuyInfo
+    public class SaleInfo
     {
         public string ID { get; set; }
         /// <summary>
@@ -34,12 +34,5 @@ namespace ChuanQi.Web.Models
         /// </summary>
         public string Place { get; set; }
 
-        public BuyInfo()
-        {
-            this.Place = string.Empty;
-            this.Name = string.Empty;
-            this.Tel = string.Empty;
-            this.Product = string.Empty;
-        }
     }
 }

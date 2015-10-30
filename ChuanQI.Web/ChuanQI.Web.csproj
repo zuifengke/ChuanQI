@@ -145,20 +145,42 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\SaleInfoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\BuyInfoController.cs" />
     <Compile Include="Controllers\RoomOrderController.cs" />
     <Compile Include="DBAccess\BaseDao.cs" />
+    <Compile Include="DBAccess\SaleInfoDao.cs" />
     <Compile Include="DBAccess\BuyInfoDao.cs" />
     <Compile Include="DBAccess\RoomOrderDao.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\SaleInfo.cs" />
     <Compile Include="Models\BuyInfo.cs" />
+    <Compile Include="Models\Pagination.cs" />
     <Compile Include="Models\RoomOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\zh-Hans\EntityFramework.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Net.Http.Formatting.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Net.Http.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Net.Http.WebRequest.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Web.Helpers.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Web.Http.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Web.Http.WebHost.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Web.Mvc.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Web.Optimization.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Web.Providers.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Web.Razor.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Web.WebPages.Razor.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Web.WebPages.resources.dll" />
+    <Content Include="Content\css\layout.css" />
     <Content Include="Content\html\cz.html" />
     <Content Include="Content\html\index.html" />
     <Content Include="Content\html\ts.html" />
@@ -201,6 +223,15 @@
     <Content Include="Content\html\www.sj5d.com\zc.gif" />
     <Content Include="Content\html\www.sj5d.com\zz.png" />
     <Content Include="Content\html\xz.html" />
+    <Content Include="Content\js\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\js\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\js\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\js\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\js\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\js\bootstrap\jquery.min.js" />
+    <Content Include="Content\js\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\js\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\js\bootstrap\js\npm.js" />
     <Content Include="Global.asax" />
     <Content Include="Content\js\jquery-1.8.2.js" />
     <Content Include="Content\js\jquery-1.8.2.min.js" />
@@ -216,11 +247,47 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Content\image\1.jpg" />
+    <Content Include="Content\image\191.jpg" />
+    <Content Include="Content\image\2.jpg" />
+    <Content Include="Content\image\3.jpg" />
+    <Content Include="Content\image\a1.jpg" />
+    <Content Include="Content\image\a2.jpg" />
+    <Content Include="Content\image\a3.jpg" />
+    <Content Include="Content\image\a5.jpg" />
+    <Content Include="Content\image\b1.jpg" />
+    <Content Include="Content\image\b2.jpg" />
+    <Content Include="Content\image\b3.jpg" />
+    <Content Include="Content\image\b4.jpg" />
+    <Content Include="Content\image\b5.jpg" />
+    <Content Include="Content\image\b6.jpg" />
+    <Content Include="Content\image\bg2.jpg" />
+    <Content Include="Content\image\bj.jpg" />
+    <Content Include="Content\image\bot.jpg" />
+    <Content Include="Content\image\bot1.jpg" />
+    <Content Include="Content\image\bt.jpg" />
+    <Content Include="Content\image\cb.jpg" />
+    <Content Include="Content\image\cc.jpg" />
+    <Content Include="Content\image\contop.jpg" />
+    <Content Include="Content\image\ct.jpg" />
+    <Content Include="Content\image\daoh1.jpg" />
+    <Content Include="Content\image\daoh2.jpg" />
+    <Content Include="Content\image\dh.jpg" />
+    <Content Include="Content\image\gameinfo.jpg" />
+    <Content Include="Content\image\gw.jpg" />
+    <Content Include="Content\image\htp1.jpg" />
+    <Content Include="Content\image\new01.gif" />
+    <Content Include="Content\image\news.jpg" />
+    <Content Include="Content\image\s1.jpg" />
+    <Content Include="Content\image\wrapbot.jpg" />
+    <Content Include="Content\image\image.css" />
+    <Content Include="Content\image\image1.css" />
+    <Content Include="Content\image\xz.jpg" />
+    <Content Include="Content\image\zc.gif" />
+    <Content Include="Content\image\zz.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\css\" />
-    <Folder Include="Content\img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -251,6 +318,34 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\BuyInfo\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\image\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BuyInfo\Submit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\js\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Content\js\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\js\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\js\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\js\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Maps\SaleInfoDaoMap.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Maps\SaleInfoMap.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SaleInfo\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SaleInfo\Submit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\chuanqi_211.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

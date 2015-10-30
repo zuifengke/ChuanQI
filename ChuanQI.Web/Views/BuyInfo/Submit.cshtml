@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "提交求购信息";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div style="height:500px;padding-left:80px;padding-right:200px;">
+    <h2>提交求购信息</h2>
+    <form action="~/BuyInfo/Submit" method="post">
+        <div class="form-group">
+            <label for="txtName">角色名：</label>
+            <input type="text" class="form-control" name="Name" required id="txtName" placeholder="必填项，角色所在分区">
+        </div>
+        <div class="form-group">
+            <label for="txtPlace">所在分区：</label>
+            <input type="text" class="form-control" name="Place" required id="txtPlace" placeholder="必填项，角色名">
+        </div>
+        <div class="form-group">
+            <label for="txtProduct">求购物品：</label>
+            <input type="text" class="form-control" name="Product" required id="txtProduct" placeholder="必填项，物品名称">
+        </div>
+        <div class="form-group">
+            <label for="txtProduct">求购价格(元)：</label>
+            <input type="text" class="form-control" name="Price" required id="txtProduct" placeholder="必填项，物品的价格">
+        </div>
+        <div class="form-group">
+            <label for="txtTelphone">手机号：</label>
+            <input type="text" class="form-control" name="Tel" required id="txtTel" placeholder="必填项">
+        </div>
+       
+        <button type="submit" class="btn btn-lg">发布</button>
+    </form>
+</div>

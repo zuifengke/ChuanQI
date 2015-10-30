@@ -8,22 +8,22 @@ using ChuanQi.Web.Models;
 
 namespace ChuanQi.Web.DBAccess
 {
-    public class BuyInfoDao:BaseDao
+    public class SaleInfoDao:BaseDao
     {
 
 
-        private static BuyInfoDao m_Instance = null;
+        private static SaleInfoDao m_Instance = null;
 
         /// <summary>
         /// 获取系统运行上下文实例
         /// </summary>
-        public static BuyInfoDao Instance
+        public static SaleInfoDao Instance
         {
             get
             {
                 if (m_Instance == null)
-                    m_Instance = new BuyInfoDao();
-                return BuyInfoDao.m_Instance;
+                    m_Instance = new SaleInfoDao();
+                return SaleInfoDao.m_Instance;
             }
         }
         /// <summary>
@@ -31,10 +31,10 @@ namespace ChuanQi.Web.DBAccess
         /// </summary>
         /// <param name="criteria"></param>
         /// <returns></returns>
-        public IList<BuyInfo> GetBuyInfos(BuyInfo BuyInfo)
+        public IList<SaleInfo> GetSaleInfos(SaleInfo SaleInfo)
         {
-            var reValue = SqlMapper.QueryForList<BuyInfo>("GetBuyInfos", BuyInfo);
-            logger.Debug("GetBuyInfos:" + (reValue == null ? 0 : reValue.Count));
+            var reValue = SqlMapper.QueryForList<SaleInfo>("GetSaleInfos", SaleInfo);
+            logger.Debug("GetSaleInfos:" + (reValue == null ? 0 : reValue.Count));
             return reValue;
         }
         /// <summary>
@@ -42,20 +42,20 @@ namespace ChuanQi.Web.DBAccess
         /// </summary>
         /// <param name="criteria"></param>
         /// <returns></returns>
-        public IList<BuyInfo> GetPageBuyInfos(int pageIndex,int pageSize,BuyInfo BuyInfo)
+        public IList<SaleInfo> GetPageSaleInfos(int pageIndex,int pageSize,SaleInfo SaleInfo)
         {
             Hashtable hashTable = new Hashtable();
             int start = (pageIndex - 1) * pageSize;
             hashTable.Add("start", start);
             hashTable.Add("pageSize", pageSize);
-            var reValue = SqlMapper.QueryForList<BuyInfo>("GetPageBuyInfos", hashTable);
+            var reValue = SqlMapper.QueryForList<SaleInfo>("GetPageSaleInfos", hashTable);
             
-            logger.Debug("GetPageBuyInfos:" + (reValue == null ? 0 : reValue.Count));
+            logger.Debug("GetPageSaleInfos:" + (reValue == null ? 0 : reValue.Count));
             return reValue;
         }
-        public int GetTotalCount(BuyInfo BuyInfo) { 
+        public int GetTotalCount(SaleInfo SaleInfo) { 
             int totalCount=0;
-            var reValue=SqlMapper.QueryForObject("GetBuyInfoTotalCount",BuyInfo);
+            var reValue=SqlMapper.QueryForObject("GetSaleInfoTotalCount",SaleInfo);
             totalCount =int.Parse(reValue.ToString());
             return totalCount;
         }
@@ -64,11 +64,11 @@ namespace ChuanQi.Web.DBAccess
         /// </summary>
         /// <param name="checkPatientModel"></param>
         /// <returns></returns>
-        public bool InsertBuyInfo(BuyInfo BuyInfo)
+        public bool InsertSaleInfo(SaleInfo SaleInfo)
         {
             try
             {
-               SqlMapper.Insert("InsertBuyInfo", BuyInfo);
+               SqlMapper.Insert("InsertSaleInfo", SaleInfo);
                return true;
             }
             catch (Exception ex)
