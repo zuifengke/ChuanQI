@@ -181,48 +181,6 @@
     <Content Include="bin\zh-Hans\System.Web.WebPages.Razor.resources.dll" />
     <Content Include="bin\zh-Hans\System.Web.WebPages.resources.dll" />
     <Content Include="Content\css\layout.css" />
-    <Content Include="Content\html\cz.html" />
-    <Content Include="Content\html\index.html" />
-    <Content Include="Content\html\ts.html" />
-    <Content Include="Content\html\www.sj5d.com\1.jpg" />
-    <Content Include="Content\html\www.sj5d.com\191.jpg" />
-    <Content Include="Content\html\www.sj5d.com\2.jpg" />
-    <Content Include="Content\html\www.sj5d.com\3.jpg" />
-    <Content Include="Content\html\www.sj5d.com\a1.jpg" />
-    <Content Include="Content\html\www.sj5d.com\a2.jpg" />
-    <Content Include="Content\html\www.sj5d.com\a3.jpg" />
-    <Content Include="Content\html\www.sj5d.com\a5.jpg" />
-    <Content Include="Content\html\www.sj5d.com\b1.jpg" />
-    <Content Include="Content\html\www.sj5d.com\b2.jpg" />
-    <Content Include="Content\html\www.sj5d.com\b3.jpg" />
-    <Content Include="Content\html\www.sj5d.com\b4.jpg" />
-    <Content Include="Content\html\www.sj5d.com\b5.jpg" />
-    <Content Include="Content\html\www.sj5d.com\b6.jpg" />
-    <Content Include="Content\html\www.sj5d.com\bg2.jpg" />
-    <Content Include="Content\html\www.sj5d.com\bj.jpg" />
-    <Content Include="Content\html\www.sj5d.com\bot.jpg" />
-    <Content Include="Content\html\www.sj5d.com\bot1.jpg" />
-    <Content Include="Content\html\www.sj5d.com\bt.jpg" />
-    <Content Include="Content\html\www.sj5d.com\cb.jpg" />
-    <Content Include="Content\html\www.sj5d.com\cc.jpg" />
-    <Content Include="Content\html\www.sj5d.com\contop.jpg" />
-    <Content Include="Content\html\www.sj5d.com\ct.jpg" />
-    <Content Include="Content\html\www.sj5d.com\daoh1.jpg" />
-    <Content Include="Content\html\www.sj5d.com\daoh2.jpg" />
-    <Content Include="Content\html\www.sj5d.com\dh.jpg" />
-    <Content Include="Content\html\www.sj5d.com\gameinfo.jpg" />
-    <Content Include="Content\html\www.sj5d.com\gw.jpg" />
-    <Content Include="Content\html\www.sj5d.com\htp1.jpg" />
-    <Content Include="Content\html\www.sj5d.com\new01.gif" />
-    <Content Include="Content\html\www.sj5d.com\news.jpg" />
-    <Content Include="Content\html\www.sj5d.com\s1.jpg" />
-    <Content Include="Content\html\www.sj5d.com\wrapbot.jpg" />
-    <Content Include="Content\html\www.sj5d.com\www.sj5d.com.css" />
-    <Content Include="Content\html\www.sj5d.com\www.sj5d.com1.css" />
-    <Content Include="Content\html\www.sj5d.com\xz.jpg" />
-    <Content Include="Content\html\www.sj5d.com\zc.gif" />
-    <Content Include="Content\html\www.sj5d.com\zz.png" />
-    <Content Include="Content\html\xz.html" />
     <Content Include="Content\js\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Content\js\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Content\js\bootstrap\css\bootstrap.css" />
@@ -288,6 +246,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\html\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -306,9 +265,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\html\www.sj5d.com\Thumbs.db" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Maps\BuyInfoDaoMap.config" />
