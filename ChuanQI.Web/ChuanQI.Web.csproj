@@ -154,19 +154,16 @@
     <Compile Include="Controllers\SaleInfoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\BuyInfoController.cs" />
-    <Compile Include="Controllers\RoomOrderController.cs" />
     <Compile Include="DBAccess\BaseDao.cs" />
     <Compile Include="DBAccess\IBatisHelper.cs" />
     <Compile Include="DBAccess\SaleInfoDao.cs" />
     <Compile Include="DBAccess\BuyInfoDao.cs" />
-    <Compile Include="DBAccess\RoomOrderDao.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\SaleInfo.cs" />
     <Compile Include="Models\BuyInfo.cs" />
     <Compile Include="Models\Pagination.cs" />
-    <Compile Include="Models\RoomOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1586,16 +1583,9 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Maps\RoomOrderDaoMap.config" />
-    <Content Include="Maps\RoomOrderMap.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="log4net.config" />
     <Content Include="Providers.config" />
     <Content Include="SqlMap.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\RoomOrder\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
