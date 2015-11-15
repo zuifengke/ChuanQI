@@ -48,6 +48,8 @@ namespace ChuanQi.Web.DBAccess
             int start = (pageIndex - 1) * pageSize;
             hashTable.Add("start", start);
             hashTable.Add("pageSize", pageSize);
+            hashTable.Add("buyinfo", BuyInfo);
+            string sql = IBatisHelper.GetRuntimeSql(this.SqlMapper, "GetPageBuyInfos", hashTable);
             var reValue = SqlMapper.QueryForList<BuyInfo>("GetPageBuyInfos", hashTable);
             
             logger.Debug("GetPageBuyInfos:" + (reValue == null ? 0 : reValue.Count));
@@ -55,7 +57,10 @@ namespace ChuanQi.Web.DBAccess
         }
         public int GetTotalCount(BuyInfo BuyInfo) { 
             int totalCount=0;
-            var reValue=SqlMapper.QueryForObject("GetBuyInfoTotalCount",BuyInfo);
+            Hashtable hashTable = new Hashtable();
+            hashTable.Add("buyinfo", BuyInfo);
+            string sql = IBatisHelper.GetRuntimeSql(this.SqlMapper, "GetBuyInfoTotalCount", hashTable);
+            var reValue=SqlMapper.QueryForObject("GetBuyInfoTotalCount", hashTable);
             totalCount =int.Parse(reValue.ToString());
             return totalCount;
         }

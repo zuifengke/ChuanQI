@@ -48,6 +48,7 @@ namespace ChuanQi.Web.DBAccess
             int start = (pageIndex - 1) * pageSize;
             hashTable.Add("start", start);
             hashTable.Add("pageSize", pageSize);
+            hashTable.Add("saleinfo", SaleInfo);
             var reValue = SqlMapper.QueryForList<SaleInfo>("GetPageSaleInfos", hashTable);
             
             logger.Debug("GetPageSaleInfos:" + (reValue == null ? 0 : reValue.Count));
@@ -55,7 +56,9 @@ namespace ChuanQi.Web.DBAccess
         }
         public int GetTotalCount(SaleInfo SaleInfo) { 
             int totalCount=0;
-            var reValue=SqlMapper.QueryForObject("GetSaleInfoTotalCount",SaleInfo);
+            Hashtable hashTable = new Hashtable();
+            hashTable.Add("saleinfo", SaleInfo);
+            var reValue=SqlMapper.QueryForObject("GetSaleInfoTotalCount", hashTable);
             totalCount =int.Parse(reValue.ToString());
             return totalCount;
         }

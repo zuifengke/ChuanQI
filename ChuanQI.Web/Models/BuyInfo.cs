@@ -33,6 +33,10 @@ namespace ChuanQi.Web.Models
         /// 所在分区
         /// </summary>
         public string Place { get; set; }
+        /// <summary>
+        /// 数据来源站点域名
+        /// </summary>
+        public string SitePath { get; set; }
 
         public BuyInfo()
         {
@@ -40,6 +44,7 @@ namespace ChuanQi.Web.Models
             this.Name = string.Empty;
             this.Tel = string.Empty;
             this.Product = string.Empty;
+            this.SitePath = string.Empty;
         }
     }
 }

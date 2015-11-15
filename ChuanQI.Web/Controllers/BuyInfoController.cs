@@ -24,6 +24,7 @@ namespace ChuanQI.Web.Controllers
             BuyInfo buyInfo = new BuyInfo();
             if (id != null)
                 this.m_pagination.PageIndex = int.Parse(id);
+            buyInfo.SitePath = Request.Url.Host;
             this.m_pagination.TotalCount = BuyInfoDao.Instance.GetTotalCount(buyInfo);
             IList<BuyInfo> lstBuyInfos = BuyInfoDao.Instance.GetPageBuyInfos(this.m_pagination.PageIndex, this.m_pagination.PageSize, buyInfo);
             ViewData["lstBuyInfos"] = lstBuyInfos;
@@ -45,6 +46,7 @@ namespace ChuanQI.Web.Controllers
             float.TryParse(form["Price"], out fPrice);
             buyInfo.Price = fPrice;
             buyInfo.Product = form["Product"];
+            buyInfo.SitePath = Request.Url.Host;
             buyInfo.SubTime = DateTime.Now;
             bool result = BuyInfoDao.Instance.InsertBuyInfo(buyInfo);
             if (result)

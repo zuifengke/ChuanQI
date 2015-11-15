@@ -40,6 +40,7 @@ namespace ChuanQI.Web.Areas.Admin.Controllers
                 json.AddItem("Price", item.Price.ToString());
                 json.AddItem("Product", item.Product.ToString());
                 json.AddItem("SubTime", item.SubTime.ToString());
+                json.AddItem("SitePath", item.SitePath == null ? "" : item.SitePath);
                 json.AddItem("Tel", item.Tel == null ? "" : item.Tel.ToString());
                 json.ItemOk();
             }
@@ -79,6 +80,7 @@ namespace ChuanQI.Web.Areas.Admin.Controllers
                 json.AddItem("Price", item.Price.ToString());
                 json.AddItem("Product", item.Product.ToString());
                 json.AddItem("SubTime", item.SubTime.ToString());
+                json.AddItem("SitePath", item.SitePath == null ? "" : item.SitePath);
                 json.AddItem("Tel", item.Tel == null ? "" : item.Tel.ToString());
                 json.ItemOk();
             }
