@@ -76,7 +76,7 @@ namespace ChuanQI.Web.Models
             }
         }
         //每页记录数
-        private int _PageSize = 10;
+        private int _PageSize = 20;
         public int PageSize
         {
             get
